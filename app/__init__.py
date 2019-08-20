@@ -15,6 +15,7 @@ db = SQLAlchemy()
 # 工厂函数，接收一个程序使用的配置
 def create_app(config_name):
     app = Flask(__name__)
+    # 在config中保存的配置，可通过from_object导入
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
     bootstrap.init_app(app)

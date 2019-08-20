@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# 保存程序路由
+# 程序的路由保存在此模块
 from datetime import datetime
 from flask import render_template, session, redirect, url_for
 from . import main

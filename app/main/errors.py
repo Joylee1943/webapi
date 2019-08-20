@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# 保存错误处理程序
 from flask import render_template, request, jsonify
 from . import main
 
-
+# 如果是errorhandler修饰器，那么只有蓝本中的错误才能触发处理程序，所以要用app_errorhandler来注册程序全局的错误处理程序
 @main.app_errorhandler(403)
 def forbidden(e):
     if request.accept_mimetypes.accept_json and \
